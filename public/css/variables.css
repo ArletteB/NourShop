@@ -1,0 +1,16 @@
+:root {
+    --blue: #003A6B;
+    --schemes: #B49EFF;
+    --white: #FDFBF4;
+    --green: #707070;
+
+    --signika: @font-face {
+        font-family: Signika;
+        src: url(./fonts/Signika-Bold.ttf)
+    };
+    --roboto: @font-face {
+        font-family: Roboto;
+        src: url(/fonts/Roboto-Regular.ttf);
+    };
+}
+

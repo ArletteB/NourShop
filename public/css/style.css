@@ -1,53 +1,60 @@
 
 *, *::before, *::after {
     box-sizing: border-box;
-    /* margin: 0;
-    padding: 0; */
+    margin: 0;
+    padding: 0;
   }
   
-  
-  
-  body {
-    margin: 0;
-
+body {
+    font-family: var(--roboto);
   }
   h1,h2,h3,h4,p,a {
-      color:#003A6B ;
+      color:var(--blue);
   }
   h1,h2,h3 {
       font-family: var(--signika) ;
   }
   a {
     text-decoration: none;
-
   }
 
 
-  /*******************************/ 
- /********     FOOTER    ********/
-/*******************************/
-#footer {
-    background-color: #B49EFF;
-    padding: 2rem;
-}
-.container-foot {
+    /*******************************/ 
+   /********     FOOTER    ********/
+  /*******************************/
+
+footer {
+  margin-top: 4rem;
+  background-image: url(../img/footer-fond.svg);
+  background-size: cover;
+  width: 100%;
+  padding: 150px 0;
+  text-align: justify;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
 }
-.cont {
-  display: flex;
-  flex-direction: column;
+footer img {
+  width: 73%;
 }
-.adre {
-  width: 50%;
+.contenu {
+  width: 69%;
 }
-.cont li {
+footer ul {
   list-style: none;
-  padding-bottom: 0.3rem;
+  display: flex;
+  padding: 0;
 }
-.cont li a {
-  
-  text-align: center;
+.societe {
+  justify-content: space-evenly;
+  margin: 0px 0px 40px 0px;
+}
+.info{
+  justify-content: space-evenly;
+  margin:67px 0px 0px 0px;
+}
+footer ul li {
+  padding: 0rem 1rem;
 }
 .reseau {
   justify-content: space-between;
@@ -56,6 +63,37 @@
 .reseau a i {
   padding-right: 2rem;
 }
-.fa-brands {
-  color:#003A6B;
+
+
+
+
+    /**************************************/ 
+   /********     MeEDIA QUERIE    ********/
+  /**************************************/
+
+@media all  and (max-width: 768px) {
+
+  /* FOOTER */
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer img {
+    width: 30%;
+  }
+  footer ul {
+    flex-direction: column;
+  }
+  footer ul li {
+    padding: 0.8rem;
+  }
+  .contenu {
+    margin-top: 1.5rem;
+  }
+  .societe {
+    margin: 0;
+  }
+  .info{
+    margin:0 ;
+  }
 }

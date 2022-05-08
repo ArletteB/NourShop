@@ -1,26 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        {# <div class="logo">
-            <a href="{{ path('home') }}"><img src="{{ asset('img/logo.svg') }}" alt="Logo de NourShop"></a>
-        </div> #}
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nos Tissus</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Wax</a></li>
-                <li><a class="dropdown-item" href="#">Bazins</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Shigan</a></li>
-            </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Notre Tailleur</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Nous Contacter</a></li>
-        </ul>
-        <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+<header class="header">
+       
+        <div class="dropdown">
+            <nav>
+                <a href="{{ path('home') }}"><img class="logonour" src="{{ asset('img/logo.svg') }}" alt="Logo NourShop">
+                <ul>
+                    <li><a href="">Nos Tissus <i class="fa-solid fa-caret-down"></i></a>
+                        <ul>
+                            <li><a href="">Wax</a></li>
+                            <li><a href="">Bazin</a></li>
+                            <li><a href="">Chigan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Notre Tailleur</a></li>
+                    <li><a href="">Nos Tarifs</a></li>
+                    <li><a href="">Nous Contacter</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
-</nav>
+    </header>

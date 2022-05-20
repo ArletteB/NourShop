@@ -4,15 +4,31 @@
 
 {% block body %}
 
-<section class="presentation">
+    <section class="presentation">
             <div class="textenour">
             <h1 class="welcome">Bienvenue sur NourShop</h1>
-            <p class="comme">Avec NourShop voyez la vie autrement</p>
+            <p class="comme">Votre Boutique de présentation de tissus Africains</p>
             </div>
             <div class="boutton">
-                <a class="boutton-btn" href="">Qui sommes nous?</a>
+                <a class="boutton-btn" href="{{ path('home_about') }}">Qui sommes nous?</a>
             </div>
-            
-        </section>
+    </section>
+  
+    {# ----------          -------------- #}
+    {# ----------  Slider  -------------- #}
+    {# ----------          -------------- #}   
+
+        <section class="cardSlider">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="{{ asset('img/bazin.0.png') }}"></div>
+                    <div class="swiper-slide"><img src="{{ asset('img/bazin1.0.png') }}"></div>
+                    <div class="swiper-slide"><img src="{{ asset('img/bazin2.0.jpg') }}"></div>
+                    <div class="swiper-slide"><img src="{{ asset('img/wax.jpg') }}"></div>
+                    <div class="swiper-slide"><img src="{{ asset('img/img2.png') }}"></div>    
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section >
 
 {% endblock %}

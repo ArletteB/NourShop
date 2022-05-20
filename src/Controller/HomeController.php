@@ -15,4 +15,19 @@ class HomeController extends AbstractController
     {
         return $this->render('home/index.html.twig');
     }
+
+    /**
+     * @Route("/tailleur", name="home_tailleur")
+     */
+     public function tailleur(): Response {
+         return $this->render('home/tailleur.html.twig');
+     }
+
+
+     /**
+     * @Route("/qui-sommes-nous", name="home_about")
+     */
+    public function about(): Response {
+        return $this->render('home/about.html.twig');
+    }
 }

@@ -1,16 +1,27 @@
+
+// ANIMATION DU TEXTE DE BIENVENUE
+
 const textAnim = document.querySelector('.welcome');
 
 new Typewriter(textAnim, {})
 
-.typeString('Bienvenue sur NourShop <br/>')
-.typeString('Votre Boutique de présentation de tissus Africain')
-.pauseFor(300)
+.typeString('Bienvenue sur NourShop')
+.pauseFor(1000)
 .start();
 
-const textAnime = document.querySelector('.comme');
-new typeString(textAnime, {
+const menuToggle = document.querySelector('#menu-btn')
+menuToggle.addEventListener('click',toggleMenu)
+function toggleMenu() {
+    var x = document.querySelector(".menu-links");
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "flex";
+    }
+  }
 
-})
-.typeString('Avec NourShop Voyez la vie autrement ')
-.pauseFor(200)
-.start();
+
+
+
+
+

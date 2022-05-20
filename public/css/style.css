@@ -28,6 +28,30 @@ body {
       list-style: none;
   }
 
+  /********************************/ 
+ /********     BOUTTON    ********/
+/********************************/
+
+.boutton {
+  margin-top: 4rem;
+}
+.boutton-btn {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 1rem;
+  width: 35vh;
+  border: 2px solid var(--blue);
+  border-radius: 1rem;
+  font-size: 20px;
+}
+
+.boutton-btn:hover {
+  background-color: var(--white);
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  font-weight: bold;
+}
+
 
   /*------------              --------------* /
  /*------------  HEADER       --------------*/
@@ -40,17 +64,19 @@ nav{
   height: 106px;
   padding-top: 1rem;
   background:var(--schemes) ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
 }
 .logonour {
-  padding: 5px 0 0 80px;
-  width: 155px;
+  width: 70px;
   height: auto;
 }
 nav ul {
   padding: 0;
   margin: 0;
-  float: right;
-  margin-right: 30px;
 }
 nav ul li {
   /*  permet de mettre un fond */
@@ -85,12 +111,16 @@ nav ul ul li {
   display: list-item;
   position: relative;
 }
+#menu-btn {
+  display: none;
+} 
+
+  /*----------                   -----------*/
+ /*-----------  PAGE ACCUEIL     ----------*/
+/*------------                   ---------*/
 
 
- /*------------                        --------------* /
- /*------------  SECTION1 DU TEXTE     --------------*/
-/*------------                         -------------*/
-
+/* SECTION TEXTE DE PRÉSENTATION */
 .presentation{
   text-align: center;
   margin-top: 10rem;
@@ -103,31 +133,286 @@ nav ul ul li {
   font-size: 25px;
 }
 
+/* CARDSLIDER  */
 
-
-  /********************************/ 
- /********     BOUTTON    ********/
-/********************************/
-
-.boutton {
-  margin-top: 4rem;
+.cardSlider{
+  margin-top: 5rem;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  background: rgba(0, 58,107,0.85);
+  border-radius: 0.5rem;
 }
-.boutton-btn {
-  background-color: var(--blue);
-  color: var(--white);
+
+
+.swiper {
+  width: 80%;
+  padding-top: 80px;
+  padding-bottom: 200px;
+}
+.swiper .swiper-wrapper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  background: var(--white);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+}
+.swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+  
+ /*------------                       --------------* /
+ /*------------  Page À PROPOS         --------------*/
+/*------------                         -------------*/
+
+.apropos {
+  text-align: center;
+  width: 86%;
+  margin-top: 3rem;
+}
+.apropos h2 {
+  margin-bottom: 3rem;
+}
+.texteapros {
+  width: 58%;
+  text-align: center;
+  margin-left: 17rem;
+}
+.mentions{
+  text-align: justify;
+  width: 86%;
+  margin-top: 3rem;
+}
+.mentions h2{
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+}
+.textementions{
+  
+  text-align: justify;
+  margin-left: 1rem;
+}
+.vue {
+  text-align: justify;
+  margin-top: 2rem;
+}
+.vue h3 {
+  font-size: 22px;
+  padding-bottom: 1rem;
+}
+
+ /*------------                        --------------*/
+  /*------------  CARD DES ARTICLES     --------------*/
+ /*------------                         -------------*/
+ .generalcontenucard h2{
+  margin: 2rem;
+  font-size: 25px;
+  text-align: center;
+}
+#containerArticle {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 90%;
+}
+.containerArticle {
+  width: 35%;
+  height:400px;
+  border: 1px solid black;
+  margin: 2rem 1rem;
+  padding-bottom: 7rem;
+  position: relative;
+  background-color: #FDFBF4;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.imageArticle {
+  width: 100%;
+  height:35vh;
+}
+.imageArticle img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.textArticle {
+  display: flex;
+  justify-content: space-between;
   padding: 1rem;
-  width: 35vh;
-  border: 2px solid var(--blue);
-  border-radius: 1rem;
-  font-size: 20px;
+}
+.textArticle h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.descriptionArticle{
+  margin-left:2rem;
+  margin-right: 2rem;
+  font-size: 18px;
 }
 
-.boutton-btn:hover {
-  background-color: var(--white);
-  color: var(--blue);
-  border: 2px solid var(--blue);
-  font-weight: bold;
+
+/*------------                        --------------*/
+  /*------------     DESCRIPTIONS       --------------*/
+ /*------------                         -------------*/
+ .container-description{
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
 }
+.image-description{
+  width: 40%;
+  height: 425px;
+  border: 2px solid grey;
+  border-radius: 21px;
+}
+.image-description img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.info-description {
+  background-color: #FDFBF4;
+  border: 1px solid grey;
+  margin-left: 5rem;
+  font-size: 18px;
+  padding: 2rem;
+}
+.info-description  p {
+  margin: 0;
+}
+
+   /*------------                    --------------* /
+  /*------------   RDV TAILLEUR      --------------*/
+ /*------------                      -------------*/
+
+.rdv{
+  margin:2rem;
+}
+
+
+   /*------------                    --------------* /
+  /*------------   PAGE CONTACT      --------------*/
+ /*------------                      -------------*/
+  .contact-page {
+   width: 85%
+ } 
+ .contact-page h2 {
+  text-align: center;
+  margin-top: 2rem;
+}
+.contact-general{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+  /* PARTIE DES INFOS SUR LE MAGASIN */
+.info-contact {
+  padding-top: 4rem;
+  padding-left: 10rem;
+}
+.info-contact a:hover{
+  color: #003A6B;
+}
+.icones{
+  padding-bottom: 1rem;
+}
+.hour {
+  float: right;
+  margin-right: 77px;
+}
+.icone {
+  margin-right: 1rem;   
+}
+
+/* CHAMPS DU FORMULAIRE */
+
+.formulaire-contact{
+  
+padding-top: 4rem;
+}
+.forminfo {
+    display: flex;
+    justify-content: start;
+    padding-bottom: 1em;
+    margin: auto;
+}
+.name {
+    border: 1px solid #003A6B;
+    border-radius: 5px;
+    padding: 1em;
+    width: 41%;
+    margin-right: 1em;
+}
+.name::placeholder {
+  font-family: 'Roboto';
+}
+.firstname {
+  border: 1px solid #003A6B;
+  border-radius: 5px;
+  padding: 1em;
+  width: 41%;
+  margin-right: 1em;
+}
+.firstname::placeholder {
+font-family: 'Roboto';
+}
+.phone {
+  border: 1px solid #003A6B;
+  border-radius: 5px;
+  padding: 1em;
+  width: 41%;
+  margin-right: 1em;
+}
+.phone::placeholder {
+font-family: 'Roboto';
+  border-radius: 5px;
+}
+.email {
+    border: 1px solid #003A6B;
+    border-radius: 5px;
+    padding: 1em;
+    width: 41%;
+}
+.email::placeholder {
+    font-family: 'Roboto';
+}
+
+.message {
+  border: 1px solid #003A6B;
+  border-radius: 5px;
+  padding: 8px 8px;
+  resize: none;
+  margin-left: auto;
+  width: 86%;
+}
+.message::placeholder {
+    font-family: 'Roboto';
+}
+
+/* BOUTTON DU FORMULAIRE */
+.envoi {
+  text-align: center;
+  background-color: #003A6B;
+  color: #FDFBF4;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px 40px ;
+  display: inline-block;
+  margin-top: 1rem;
+  margin-left: 6rem;
+  transition: all ease-in 0.3s;
+  }
+  .envoi:hover {
+      background: #FDFBF4;
+      color: #003A6B ;
+      border: 2px solid #003A6B;
+      font-weight: bold;
+  }
 
 
 
@@ -176,7 +461,9 @@ footer ul li {
 .reseau a i {
   padding-right: 2rem;
 }
-
+.fa-brands {
+  font-size: 38px;
+}
 
 
 
@@ -192,59 +479,564 @@ footer ul li {
     width: 27vh;
     font-size: 15px;
   }
- /* TEXTE DE PRESENTATION */
-  .presentation h1 {
-    font-size: 25px;
+ /*----------                   -----------*/
+ /*-----------  PAGE ACCUEIL     ----------*/
+/*------------                   ---------*/
+
+
+/* TEXTE DE PRESENTATION */
+.presentation h1 {
+  font-size: 25px;
+}
+.presentation p {
+  margin-top: 2rem;
+  font-size: 20px;
   }
-  .presentation p {
-    margin-top: 2rem;
-    font-size: 20px;
-   }
+
+   /*------------                        --------------*/
+  /*------------  CARD DES ARTICLES     --------------*/
+ /*------------                         -------------*/
+ #containerArticle {
+  display: flex;
+  flex-direction: column;
+}
+.containerArticle {
+  width: 100%;
+  height:450px;
+
+}
+/* CARDSLIDER */
+
+.swiper{
+  width: 70%;
+  padding-top: 97px;
+}
+
+
+  /*----------                    -----------*/
+ /*-----------  PAGE À PROPOS     ----------*/
+/*------------                    ---------*/
+
+.apropos {
+  text-align: center;
+  width: 100%;
+  margin-top: 3rem;
+}
+.apropos h2 {
+  font-size: 25px;
+}
+.texteapros {
+  width: 92%;
+  margin-left: 3px;
+  margin-right: 3px;
+  font-size: 20px;
+}
+
+
+   /*------------                    --------------* /
+  /*------------   PAGE CONTACT      --------------*/
+ /*------------                      -------------*/
+.contact-page {
+  width: 100%
+}  
+
+.contact-general{
+ display: flex;
+ flex-direction: column;
+}
+ /* PARTIE DES INFOS SUR LE MAGASIN */
+.info-contact {
+ padding-left:41px;
+}
+.info-contact a:hover{
+ color: #003A6B;
+}
+.icones{
+ padding-bottom: 1rem;
+}
+.hour {
+ float: right;
+ margin-right: 153px;
+}
+
+
+/* CHAMPS DU FORMULAIRE */
+
+.formulaire-contact{
+  padding-right: 41px;
+  padding-left: 41px;
+}
+.forminfo {
+   display: flex;
+   flex-direction: column;
+   
+}
+.name {
+   width: 100%;
+   margin-bottom: 2rem;
+}
+.name::placeholder {
+ font-family: 'Roboto';
+}
+.firstname {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.firstname::placeholder {
+font-family: 'Roboto';
+}
+.phone {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.phone::placeholder {
+font-family: 'Roboto';
+ border-radius: 5px;
+}
+.email {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.email::placeholder {
+   font-family: 'Roboto';
+}
+
+.message {
+  width: 100%;
+   margin-bottom: 2rem;
+}
+.message::placeholder {
+   font-family: 'Roboto';
+}
+
+/* BOUTTON DU FORMULAIRE */
+.envoi {
+ padding: 8px 30px ;
+ margin-left: 4rem;
+ 
+ }
+
+  /*----------                  -----------*/
+ /*-----------      FOOTER      ----------*/
+/*------------                  ---------*/
+
+footer {
+  flex-direction: column;
+  text-align: center;
+}
+footer img {
+  width: 30%;
+}
+footer ul {
+  flex-direction: column;
+}
+footer ul li {
+  padding: 0.8rem;
+}
+.contenu {
+  margin-top: 1.5rem;
+}
+.societe {
+  margin: 0;
+}
+.info{
+  margin:0 ;
+}
+
+  /*------------                        --------------*/
+ /*------------     DESCRIPTIONS       --------------*/
+/*------------                         -------------*/
+ .container-description{
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  margin: 3rem;
+}
+.image-description{
+  width: 100%;
+  height: 425px;
+}
+.text-description {
+  margin-top: 5rem;
+}
+
+.info-description {
+  width: 100%;
+  margin-left: 0px;
+  font-size: 14px;
+}
  
 }
 
 
-@media (min-width: 426px) and (max-width:765px ) {
+@media (min-width: 427px) and (max-width:768px ) {
   
   /* POUR TOUS LES BOUTTON */
   .boutton-btn {
     width: 30vh;
   }
-  /* TEXTE DE PRESENTATION */
-  .presentation h1 {
+   /*----------                   -----------*/
+ /*-----------  PAGE ACCUEIL     ----------*/
+/*------------                   ---------*/
+
+/* TEXTE DE PRESENTATION */
+.presentation h1 {
+  font-size: 35px;
+}
+.presentation p {
+  margin-top: 2rem;
+  font-size: 20px;
+  }
+
+
+  /*------------  CARD DES ARTICLES     --------------*/
+
+ #containerArticle {
+  display: flex;
+  flex-direction: column;
+}
+.containerArticle {
+  width: 100%;
+  height:450px;
+
+}
+
+/* CARDSLIDER */
+
+.swiper{
+  width: 100%;
+  padding-top: 92px;
+}
+
+
+  /*----------                    -----------*/
+ /*-----------  PAGE À PROPOS     ----------*/
+/*------------                    ---------*/
+
+.apropos {
+  text-align: center;
+  width: 100%;
+  margin-top: 3rem;
+}
+.apropos h2 {
+  font-size: 55px;
+}
+.texteapros {
+  width: 94%;
+  margin-left: 16px;
+  margin-right: 16px;
+  font-size: 31px;
+}
+
+
+  /*------------                        --------------*/
+ /*------------     DESCRIPTIONS       --------------*/
+/*------------                         -------------*/
+.container-description{
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  margin: 3rem;
+}
+.image-description{
+  width: 100%;
+  height: 425px;
+}
+.text-description {
+  margin-top: 5rem;
+}
+
+.info-description {
+  width: 98%;
+  margin-left: 0px;
+  font-size: 14px;
+}
+
+/*------------                    --------------* /
+  /*------------   PAGE CONTACT      --------------*/
+ /*------------                      -------------*/
+ .contact-page {
+  width: 100%
+}  
+
+.contact-general{
+ display: flex;
+ flex-direction: column;
+}
+ /* PARTIE DES INFOS SUR LE MAGASIN */
+.info-contact {
+ padding-left:41px;
+}
+.info-contact a:hover{
+ color: #003A6B;
+}
+.icones{
+ padding-bottom: 1rem;
+}
+.hour {
+ float: right;
+ margin-right: 153px;
+}
+
+
+/* CHAMPS DU FORMULAIRE */
+
+.formulaire-contact{
+  padding-right: 41px;
+  padding-left: 41px;
+}
+.forminfo {
+   display: flex;
+   flex-direction: column;
+   
+}
+.name {
+   width: 100%;
+   margin-bottom: 2rem;
+}
+.name::placeholder {
+ font-family: 'Roboto';
+}
+.firstname {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.firstname::placeholder {
+font-family: 'Roboto';
+}
+.phone {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.phone::placeholder {
+font-family: 'Roboto';
+ border-radius: 5px;
+}
+.email {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.email::placeholder {
+   font-family: 'Roboto';
+}
+
+.message {
+  width: 100%;
+   margin-bottom: 2rem;
+}
+.message::placeholder {
+   font-family: 'Roboto';
+}
+
+/* BOUTTON DU FORMULAIRE */
+.envoi {
+ padding: 8px 30px ;
+ margin-left: 4rem;
+ 
+ }
+
+
+  /*----------                  -----------*/
+ /*-----------      FOOTER      ----------*/
+/*------------                  ---------*/
+
+footer {
+  flex-direction: column;
+  text-align: center;
+}
+footer img {
+  width: 30%;
+}
+footer ul {
+  flex-direction: column;
+}
+footer ul li {
+  padding: 0.8rem;
+}
+.contenu {
+  margin-top: 1.5rem;
+}
+.societe {
+  margin: 0;
+}
+.info{
+  margin:0 ;
+}
+
+  }
+
+
+
+  @media (min-width: 769px) and (max-width:1000px ){
+
+    /*----------                    -----------*/
+   /*-----------  PAGE À PROPOS     ----------*/
+  /*------------                    ---------*/
+  
+  .apropos {
+    text-align: center;
+    width: 95%;
+    margin-top: 3rem;
+  }
+  .apropos h2 {
+    font-size: 55px;
+  }
+  .texteapros {
+    width: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
     font-size: 35px;
   }
-  .presentation p {
-    margin-top: 2rem;
-    font-size: 20px;
+  .texteapros p {
+    font-size: 26px;
+  }
+   
+  
+     /*------------                        --------------*/
+    /*------------  CARD DES ARTICLES     --------------*/
+   /*------------                         -------------*/
+   #containerArticle {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .containerArticle {
+    width: 45%;
+    height: 460px;
+  
+  }
+  
+  
+  
+    /*------------                        --------------*/
+   /*------------     DESCRIPTIONS       --------------*/
+  /*------------                         -------------*/
+  .container-description{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    margin: 3rem;
+  }
+  .image-description{
+    width: 100%;
+    height: 425px;
+  }
+  .text-description {
+    margin-top: 5rem;
+  }
+  
+  .info-description {
+    width: 98%;
+    margin-left: 0px;
+    font-size: 14px;
+  }
+  
+  /*------------                    --------------* /
+    /*------------   PAGE CONTACT      --------------*/
+   /*------------                      -------------*/
+   .contact-page {
+    width: 100%
+  }  
+  
+  .contact-general{
+   display: flex;
+   flex-direction: column;
+  }
+   /* PARTIE DES INFOS SUR LE MAGASIN */
+  .info-contact {
+   padding-left:41px;
+  }
+  .info-contact a:hover{
+   color: #003A6B;
+  }
+  .icones{
+   padding-bottom: 1rem;
+  }
+  .hour {
+   float: right;
+   margin-right: 153px;
+  }
+  
+  
+  /* CHAMPS DU FORMULAIRE */
+  
+  .formulaire-contact{
+    padding-right: 41px;
+    padding-left: 41px;
+  }
+  .forminfo {
+     display: flex;
+     flex-direction: column;
+     
+  }
+  .name {
+     width: 100%;
+     margin-bottom: 2rem;
+  }
+  .name::placeholder {
+   font-family: 'Roboto';
+  }
+  .firstname {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .firstname::placeholder {
+  font-family: 'Roboto';
+  }
+  .phone {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .phone::placeholder {
+  font-family: 'Roboto';
+   border-radius: 5px;
+  }
+  .email {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .email::placeholder {
+     font-family: 'Roboto';
+  }
+  
+  .message {
+    width: 100%;
+     margin-bottom: 2rem;
+  }
+  .message::placeholder {
+     font-family: 'Roboto';
+  }
+  
+  /* BOUTTON DU FORMULAIRE */
+  .envoi {
+   padding: 8px 30px ;
+   margin-left: 4rem;
+   
+   }
+  
+  }
+  
+  @media screen and (max-width:1120px ) {
+    nav ul {
+      position: absolute;
+      display: none;
+      flex-direction: column;
+      bottom:0 ;
+      transform: translateY(100%);
+      right: 0;
     }
+    #menu-btn {
+      display: block;
+      font-size: 30px;
+     cursor: pointer;
+     color: #003A6B;
+     border: none;
+     background-color: transparent;
+    }
+    #menu-btn:hover {
+      color: #FDFBF4;
+    }
+  
+  
+  
   }
-
-
-
-@media screen  and (max-width: 768px) {
-
-  /* FOOTER */
-  footer {
-    flex-direction: column;
-    text-align: center;
-  }
-  footer img {
-    width: 30%;
-  }
-  footer ul {
-    flex-direction: column;
-  }
-  footer ul li {
-    padding: 0.8rem;
-  }
-  .contenu {
-    margin-top: 1.5rem;
-  }
-  .societe {
-    margin: 0;
-  }
-  .info{
-    margin:0 ;
-  }
-}

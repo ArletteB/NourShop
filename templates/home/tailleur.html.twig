@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre Tailleur {{ parent() }}{% endblock %}
+
+{% block body %}
+<section class="rdv">
+        
+        <!-- Début de widget en ligne Calendly -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/adiathbello81/rendez-vous-tailleur" style="min-width:320px;height:750px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Fin de widget en ligne Calendly -->
+
+    </section>
+{% endblock %}

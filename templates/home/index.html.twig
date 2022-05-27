@@ -13,7 +13,31 @@
                 <a class="boutton-btn" href="{{ path('home_about') }}">Qui sommes nous?</a>
             </div>
     </section>
-  
+    
+
+    {# ----------              -------------- #}
+    {# ----------   NOUVEAUTÉ  -------------- #}
+    {# ----------              -------------- #}
+
+        <section class="generalcontenucard">
+            <h2>MEILLEUR VENTES</h2>
+            <div id="containerArticle">
+            <!-- 1ER PERSONNAGE -->
+                <div class="containerArticle">
+                    <a href="">
+                        <div class="imageArticle">
+                            <img src="{{ asset('img/wax10.jpg') }}" alt="Chasseur d'Orc"> 
+                        </div>
+                        <div class="textArticle">
+                            <h3>Super WAX Ghana</h3>
+                            <p>35€</p>  
+                        </div>
+                        <p class="descriptionArticle">WAX PAGNE TISSU AFRICAIN BRILLANT Et PAILLETÉ SUPER NICE COTON</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     {# ----------          -------------- #}
     {# ----------  Slider  -------------- #}
     {# ----------          -------------- #}   
@@ -30,5 +54,7 @@
                 <div class="swiper-pagination"></div>
             </div>
         </section >
+
+   
 
 {% endblock %}

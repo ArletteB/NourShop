@@ -1025,6 +1025,10 @@ footer ul li {
       transform: translateY(100%);
       right: 0;
     }
+    nav ul ul {
+      width: 100%;
+      z-index: 1;
+    }
     #menu-btn {
       display: block;
       font-size: 30px;

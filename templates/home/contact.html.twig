@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous Contacter {{ parent() }}{% endblock %}
+
+{% block body %}
+    <section class="contact-page">
+    {%for message in app.flashes('message')%}
+        <div class="alert alert-success" role="alert">{{message}}</div>
+    {% endfor %}
+        <h2>Contactez-nous</h2>
+        <div class="contact-general">
+            <div class="info-contact">                       
+                <div class="icones"><i class=" icone fas fa-map-marker-alt"></i><a href="">Quai lawton</a></div>
+                <div class="icones"><i class=" icone fa-solid fa-phone"></i><a href="tel:+1631523266">(+33) 6 31 52 32 66</a></div>
+                <div class="icones"><i class=" icone fa-solid fa-envelope"></i><a href="">nourshop241@gmail.com</a></div>
+                <div class="icones"><i class=" icone fa-solid fa-clock"></i>Lun-Sam: 8h30-13h30 et de 14h30-18h</span></div>
+            </div>
+                {# Partie du champs de formulaire du contact #}
+               
+
+            <div class="formulaire-contact">
+                <div class="form" action="">
+                    <div class="forminfo name-lastname">
+                     {{form_row(form.name, {'attr': {'class' : 'name'}}) }}
+                        <span id="firstname" class="firstname">{{form_row(form.lastname)}}</span>
+                        {# <input id="name" class="name" type="text" placeholder="Nom">
+                        <input id="firstname" class="firstname " type="text" placeholder="Prenom">  #}
+                    </div>
+                    <div class="forminfo adresse">
+                        <input id="" class="phone" type="text" placeholder="Telephone">
+                        <input id="" class="email" type="text" placeholder="Email"> 
+                    </div>
+    
+                    <textarea class="message" name=""  cols="40" rows="5" placeholder="Message"></textarea>  
+                </div>
+                <a class="envoi" href="">Envoyer</a>
+            </div>
+        </div>
+    </section>
+               
+{% endblock %}

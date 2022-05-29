@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un Article
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+	    <section class="generalcontenucard">
+            <h2>Article</h2>
+            <div id="containerArticle">
+
+        {% for article in articles %}
+            <!-- 1ER PERSONNAGE -->
+                <div class="containerArticle">
+                    <a href="">
+                        <div class="imageArticle">
+                            <img src="" alt=""> 
+                        </div>
+                        <div class="textArticle">
+                            <h3>{{article.nom}}</h3>
+                            <p>{{article.prix}}€</p>  
+                        </div>
+                        <p class="descriptionArticle">{{article.description|slice(0, 130)}}...</p>
+                    </a>
+                </div>
+        {% endfor %}
+
+            </div>
+        </section>
+{% endblock %}

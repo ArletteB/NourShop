@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer un article{% endblock %}
+
+{% block body %}
+            <h2>Editer un Article</h2>
+        {{ form_start(form)}}
+
+            {{ include('article/_form.html.twig') }}    
+            <button class="btn_primary">Editer</button>
+
+        {{ form_end(form)}}
+        
+{% endblock %}

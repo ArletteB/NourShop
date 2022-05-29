@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticlesRepository;
+use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ArticlesRepository::class)
+ * @ORM\Entity(repositoryClass=ArticleRepository::class)
  */
-class Articles
+class Article
 {
     /**
      * @ORM\Id
@@ -36,12 +36,12 @@ class Articles
      * @ORM\Column(type="datetime_immutable", nullable=true)
      */
     private $createdAt;
-
     /**
-     * @ORM\ManyToOne(targetEntity=Tissus::class, inversedBy="articles")
+     * @ORM\ManyToOne(targetEntity=Tissus::class, inversedBy="article")
      */
     private $tissus;
 
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -106,4 +106,10 @@ class Articles
 
         return $this;
     }
+   
+    public function __toString()
+    {
+        return $this->name;
+    }
+   
 }

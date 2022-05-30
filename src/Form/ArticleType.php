@@ -20,7 +20,7 @@ class ArticleType extends AbstractType
             ->add('nom', TextType::class)
             ->add('prix', MoneyType::class)
             ->add('description', TextareaType::class)
-            ->add('createdAt', DateType::class)
+            // ->add('createdAt', DateType::class)
             ->add('tissus', TextType::class)
         ;
     }

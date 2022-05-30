@@ -41,6 +41,11 @@ class Article
      */
     private $tissus;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $image;
+
     
     public function getId(): ?int
     {
@@ -110,6 +115,18 @@ class Article
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
     }
    
 }

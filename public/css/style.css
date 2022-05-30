@@ -283,17 +283,18 @@ nav ul ul li {
   height: 100%;
   border-radius: 20px;
 }
-
+.articleh2{
+  font-size: 25px;
+  margin-bottom: 1rem;
+}
 .info-description {
   background-color: #FDFBF4;
   border: 1px solid grey;
-  margin-left: 5rem;
+  margin-left: 20rem;
   font-size: 18px;
   padding: 2rem;
 }
-.info-description  p {
-  margin: 0;
-}
+
 
    /*------------                    --------------* /
   /*------------   RDV TAILLEUR      --------------*/
@@ -1065,4 +1066,9 @@ footer ul li {
   
   
   
+  }
+
+
+  .cke_dialog_container {
+    height: 92% !important;
   }

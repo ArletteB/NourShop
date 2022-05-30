@@ -47,7 +47,7 @@ class ArticleController extends AbstractController
         ]);
     }
       /**
-     * @Route("/article/{id}/editer", name="article_edit", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
+     * @Route("/{id}/editer", name="article_edit", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
      */
     public function editer($id, ManagerRegistry $doctrine , Request $request): Response {
         $em = $doctrine->getManager();

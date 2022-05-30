@@ -6,6 +6,7 @@ use App\Repository\TissusRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use PhpParser\Node\Expr\Cast\String_;
 
 /**
  * @ORM\Entity(repositoryClass=TissusRepository::class)
@@ -82,7 +83,7 @@ class Tissus
     }
     public function __toString()
     {
-        return $this->getArticle();
+        return(string) $this->getArticle();
     }
    
 }

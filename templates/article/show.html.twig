@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.nom }}{% endblock %}
+
+{% block body %}
+      
+
+        <section class="description">
+        <div class="container-description">
+            <div class="image-description">
+                <a href="{{ path('article_index')}}"><img src="{{ article.image }}" alt=""></a>
+            </div>
+            <div class="text-description">
+                <div class="info-description"
+                 
+                    <h2 class="articleh2"> {{ article.nom }}  </h2>
+                    <p>{{ article.prix }}€</p> 
+                    <p>{{ article.description }}</p>    
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

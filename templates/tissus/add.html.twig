@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un Tissus{% endblock %}
+
+{% block body %}
+        <h2>Ajouter un Tissus</h2>
+        {{ form_start(form)}}
+
+            {{ include('tissus/_form.html.twig') }}    
+            <button class="btn_primary">Ajouter</button>
+
+        {{ form_end(form)}}
+{% endblock %}

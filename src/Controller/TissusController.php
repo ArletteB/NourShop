@@ -25,7 +25,7 @@ class TissusController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="tissus_show")
+     * @Route("/{id}", name="tissus_show", methods={"GET"}, requirements={ "id" = "\d+"})
      */
     public function show($id, ManagerRegistry $doctrine): Response
     {

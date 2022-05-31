@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Article;
+use App\Entity\Tissus;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -21,7 +23,10 @@ class ArticleType extends AbstractType
             ->add('prix', MoneyType::class)
             ->add('description', TextareaType::class)
             // ->add('createdAt', DateType::class)
-            ->add('tissus', TextType::class)
+            ->add('tissus', EntityType::class, [
+                'class' => Tissus::class,
+                'choice_label' => 'name'
+            ])
         ;
     }
 

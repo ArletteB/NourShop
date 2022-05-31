@@ -80,9 +80,9 @@ class Tissus
 
         return $this;
     }
-    public function __toString()
-    {
-        return $this->getArticle();
-    }
+    // public function __toString()
+    // {
+    //     return $this->getArticle();
+    // }
    
 }

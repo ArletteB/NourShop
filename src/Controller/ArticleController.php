@@ -57,7 +57,7 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em->flush();
-            return $this->redirectToRoute('article_show', ['id' => $id]);
+            return $this->redirectToRoute('article_index', ['id' => $id]);
         }
 
         return $this->render('article/edit.html.twig', [
@@ -66,7 +66,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="article_show", methods={"GET"}, requirements={ "id" = "\d+" })
+     * @Route("/{id}", name="article_show", methods={"GET"} )
      */
     public function show($id, ManagerRegistry $doctrine): Response {
         $repository = $doctrine->getRepository(Article::class);

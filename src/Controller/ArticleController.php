@@ -47,7 +47,7 @@ class ArticleController extends AbstractController
         ]);
     }
       /**
-     * @Route("/article/{id}/editer", name="article_edit", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
+     * @Route("/{id}/editer", name="article_edit", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
      */
     public function editer($id, ManagerRegistry $doctrine , Request $request): Response {
         $em = $doctrine->getManager();
@@ -57,7 +57,7 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em->flush();
-            return $this->redirectToRoute('article_index', ['id' => $id]);
+            return $this->redirectToRoute('article_show', ['id' => $id]);
         }
 
         return $this->render('article/edit.html.twig', [
@@ -66,7 +66,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="article_show", methods={"GET"} )
+     * @Route("/{id}", name="article_show", methods={"GET"}, requirements={ "id" = "\d+" })
      */
     public function show($id, ManagerRegistry $doctrine): Response {
         $repository = $doctrine->getRepository(Article::class);
@@ -85,6 +85,18 @@ class ArticleController extends AbstractController
         $em->remove($article);
         $em->flush();
         return $this->redirectToRoute('article_index');
+    }
+
+
+
+    /**
+     * @Route("/article/wax", name="article_wax_index")
+     */
+    public function show_wax(ManagerRegistry $doctrine): Response {
+        $repository = $doctrine->getRepository(Article::class);
+        $articles = $repository->findBy(['tissus'=> "wax"], ['nom'=> 'DESC']);
+      
+        return $this->render('article/index.html.twig', ['articles'=> $articles]);
     }
 
 }

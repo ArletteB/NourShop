@@ -8,11 +8,13 @@
  <section class="description">
         <div class="container-description">
             <div class="image-description">
-                <a href="{{ path('article_index') }}"><img src="" alt=""></a>
+                <a href="{{ path('article_index') }}">
+                <img src="{{ asset('images/article/' ~ article.image) }}" alt=""> 
+                </a>
             </div>
             <div class="text-description">
                 <div class="info-description">
-                    <h2>{{article.nom}}</h2>
+                    <h2 class="articleh2">{{article.nom}}</h2>
                     <p>{{article.prix}}€</p>  
                     <p class="descriptionArticle">{{article.description}}</p>
                 </div>

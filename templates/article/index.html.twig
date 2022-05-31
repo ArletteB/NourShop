@@ -13,9 +13,9 @@
         {% for article in articles %}
             <!-- 1ER PERSONNAGE -->
                 <div class="containerArticle">
-                    <a href="{{ path('article_show') }}">
+                    <a href="{{ path('article_show', {"id": article.id}) }}">
                         <div class="imageArticle">
-                            <img src="" alt=""> 
+                            <img src="{{ asset('images/article/' ~ article.image) }}" alt=""> 
                         </div>
                         <div class="textArticle">
                             <h3>{{article.nom}}</h3>

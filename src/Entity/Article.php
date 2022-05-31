@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ *  @Vich\Uploadable
  */
 class Article
 {
@@ -40,6 +43,21 @@ class Article
      * @ORM\ManyToOne(targetEntity=Tissus::class, inversedBy="article")
      */
     private $tissus;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $image;
+
+
+     /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     * 
+     * @Vich\UploadableField(mapping="article_image", fileNameProperty="image")
+     * 
+     * @var File|null
+     */
+    private $imageFile;
 
     
     public function getId(): ?int
@@ -107,9 +125,30 @@ class Article
         return $this;
     }
    
-    // public function __toString()
-    // {
-    //     return $this->name;
-    // }
+    
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function setImageFile(?File $imageFile = null): self
+    {
+        $this->imageFile = $imageFile;
+        return $this;
+
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
    
 }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ContactType;
+use App\Repository\ArticleRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,9 +16,11 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(): Response
+    public function index(ArticleRepository $articleRepository): Response
     {
-        return $this->render('home/index.html.twig');
+        return $this->render('home/index.html.twig', [
+            'articles' => $articleRepository->lastArticle(),
+        ]);
     }
 
     /**
@@ -28,14 +31,14 @@ class HomeController extends AbstractController
      }
 
 
-     /**
+    /**
      * @Route("/qui-sommes-nous", name="home_about")
      */
     public function about(): Response {
         return $this->render('home/about.html.twig');
     }
 
-     /**
+    /**
      * @Route("/contact", name="home_contact")
      */
     public function contact(Request $request, MailerInterface $mailer): Response {
@@ -65,4 +68,7 @@ class HomeController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+
+
 }

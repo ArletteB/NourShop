@@ -736,6 +736,26 @@ font-family: 'Roboto';
  
  }
 
+ 
+   /********************************************/ 
+  /********     FORMULAIRE DE LOGIN    ********/
+  /*******************************************/
+
+#section .containerLogin .user .imgBx {
+ display: none;
+}
+
+
+
+#section .containerLogin .user .formBx {
+  width: 100%;
+}
+
+#section .containerLogin .user .formBx h2 {
+ font-size: 25px;
+}
+
+
   /*----------                  -----------*/
  /*-----------      FOOTER      ----------*/
 /*------------                  ---------*/
@@ -1154,7 +1174,8 @@ footer ul li {
       flex-direction: column;
       bottom:0 ;
       transform: translateY(100%);
-      right: 0;
+      right: 0;      
+      z-index: 1;
     }
     nav ul ul {
       width: 100%;

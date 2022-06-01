@@ -3,15 +3,23 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
-
+  
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
+    <section  id="section">   
+        <div class="containerLogin">
+            <div class="user signinBx">
+                <div class="imgBx"><img src="{{ asset('img/logo.svg') }}" alt=""></div>
+                <div class="formBx">               
+                    <h2>S'enregitrer</h2>
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }}
+                    
+                    <input class="btn" type="submit" value="Envoyer">
+                </div>
+            </div>
+        </div>
+    </section>
     {{ form_end(registrationForm) }}
 {% endblock %}

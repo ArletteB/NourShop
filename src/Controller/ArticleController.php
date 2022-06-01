@@ -31,6 +31,7 @@ class ArticleController extends AbstractController
      * @return Response
      */
     public function add(ManagerRegistry $doctrine, Request $request): Response {
+        
         $em = $doctrine->getManager();
         $article= new Article();
         $form= $this->createForm(ArticleType::class, $article);

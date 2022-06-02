@@ -29,10 +29,7 @@ class ArticleType extends AbstractType
                 'class' => Tissus::class,
                 'choice_label' => 'name'
             ])
-            ->add('save', SubmitType::class, 
-                ['label' => 'Enregistrer'],
-                ['attr' => ['class' => 'save']]
-             )
+            
         ;
     }
 

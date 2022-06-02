@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 
 /**
@@ -28,6 +29,7 @@ class ArticleController extends AbstractController
 
      /**
      * @Route("/article/ajouter", name="article_add")
+     * @IsGranted("ROLE_ADMIN")
      * @return Response
      */
     public function add(ManagerRegistry $doctrine, Request $request): Response {
@@ -49,6 +51,7 @@ class ArticleController extends AbstractController
     }
       /**
      * @Route("/{id}/editer", name="article_edit", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function editer($id, ManagerRegistry $doctrine , Request $request): Response {
         $em = $doctrine->getManager();
@@ -78,6 +81,7 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/{id}/supprimer", name="article_delete", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete($id, ManagerRegistry $doctrine): Response {
         $em = $doctrine->getManager();

@@ -1,20 +1,105 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/dash.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="containerDash">
+        <div class="navigationDash">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="iconDash"></span>
+                        <span class="titleDash">NourShop</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="iconDash"><i class="fa-solid fa-house-user"></i></span>
+                        <span class="titleDash">Dasboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('article_add') }}">
+                        <span class="iconDash"><i class="fa-solid fa-list"></i></span>
+                        <span class="titleDash">Articles</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="iconDash"><i class="fa-solid fa-list"></i></span>
+                        <span class="titleDash">Tissus</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="iconDash"><i class="fa-solid fa-lock"></i></i></span>
+                        <span class="titleDash">Passeword</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_logout') }}">
+                        <span class="iconDash"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="titleDash">Singin Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-{% block title %}Hello DashboardController!{% endblock %}
+        <!-- MAIN -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-bars icons"></i>
+                </div>
+                <!-- Recherche -->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Rechercher">
+                        <i class="searchIcon fa-solid fa-magnifying-glass"></i>
+                    </label>
+                </div>
+                <!-- Admin Image -->
+                <div class="admin">
+                    <img src="  {{ asset('img/logons-resize.png') }}" alt="Logo NourShop">
+                  
+                </div>
+            </div>
+        </div>
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+   
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/PRF/OneDrive - Campus du Lac/sympfony/nourShop/src/Controller/DashboardController.php'|file_link(0) }}">src/Controller/DashboardController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/PRF/OneDrive - Campus du Lac/sympfony/nourShop/templates/dashboard/index.html.twig'|file_link(0) }}">templates/dashboard/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        
+    <script >
+
+        // Menu Toggle
+        
+        let toggle = document.querySelector('.toggle');
+        let navigationDash = document.querySelector('.navigationDash');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function(){
+            navigationDash.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+        //  Ajouter une class survolée dans l'élément de liste selectionné
+        let list = document.querySelectorAll('.navigationDash li');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover', activeLink));
+    </script>
+</body>
+</html>

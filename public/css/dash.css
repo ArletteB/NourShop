@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+:root
+{
+    --blue: #003A6B;
+    --schemes: #B49EFF;
+    --white: #FDFBF4;
+    --green: #707070;
+}
+
+.containerDash {
+    position: relative;
+    width: 100%;
+}
+
+.navigationDash {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigationDash.active {
+    width: 80px;
+}
+.navigationDash ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigationDash ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.navigationDash ul li:hover,
+.navigationDash ul li.hovered a  {
+    background: var(--white);
+}
+.navigationDash ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigationDash ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+.navigationDash ul li:hover a ,
+.navigationDash ul li.hovered a {
+    color: var(--blue);
+}
+
+.navigationDash ul li a .iconDash {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 65px;
+    text-align: center;
+}
+.navigationDash ul li a .iconDash .fa-solid {
+    font-size: 1.60em;
+}
+.navigationDash ul li a .titleDash {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/* Couorbe de l'extérieur */
+
+.navigationDash ul li:hover a::before,
+.navigationDash ul li.hovered a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.navigationDash ul li:hover a::after,
+.navigationDash ul li.hovered a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+/* MAIN */
+
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    /* background: var(--white); */
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--green);
+}
+
+.search  label .fa-solid {
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+.admin {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.admin img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

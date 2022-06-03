@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
+use App\Repository\ArticleRepository;
+
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,7 +22,15 @@ class ArticleController extends AbstractController
     /**
      * @Route("/article", name="article_index")
      */
-    public function index(ManagerRegistry $doctrine): Response {
+    public function index(
+        ArticleRepository $articleRepository,
+        ManagerRegistry $doctrine,
+        Request $request
+        ): Response {
+            $data = $articleRepository->findAll();
+            $articles = (
+                $request->query->getInt('page', 1)
+            );
         $repository = $doctrine->getRepository(Article::class);
         $articles = $repository->findBy([], ['nom'=> 'DESC']);
       

@@ -139,39 +139,98 @@ nav ul ul li {
 
 /* CARDSLIDER  */
 
-.cardSlider{
-  margin-top: 5rem;
-  font-size: 14px;
+#section-swip{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 85vh;
-  background: rgba(0, 58,107,0.85);
-  border-radius: 0.5rem;
+  background:  var(--schemes);
+  overflow: hidden;
 }
 
-
-.swiper {
-  width: 80%;
-  padding-top: 80px;
-  padding-bottom: 200px;
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
-.swiper .swiper-wrapper .swiper-slide {
+.swiper-container  h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  width: 320px;
   background: var(--white);
-  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+  box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+  filter: blur(4px);
+  border-radius: 10px;
 }
-.swiper .swiper-wrapper .swiper-slide img {
-  width: 100%;
+.swiper-slide-active {
+  filter: blur(0px);
+  background: var(--white);
 }
-.swiper-wrapper {
+
+.tetstiomonialBox{
+  position: relative;
   width: 100%;
+  padding: 40px;
+  padding-top: 90px;
+  color:  #999;
+}
+.tetstiomonialBox .quote {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  opacity: 0.2;
+  width: 15%;
+}
+.tetstiomonialBox .content p {
+  font-size: 17px ;
+}
+
+.tetstiomonialBox .details {
   display: flex;
+  align-items: center;
+  margin-top: 20px;
 }
-  
+.tetstiomonialBox .details .imgBx {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.tetstiomonialBox .details .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tetstiomonialBox .details h3 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--schemes);
+  line-height: 1.1em;
+}
+.tetstiomonialBox .details h3  span {
+  font-size: 12px;
+  color: #666;
+}
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+
+
+
+
  /*------------                       --------------* /
  /*------------  Page À PROPOS         --------------*/
 /*------------                         -------------*/
@@ -1196,3 +1255,4 @@ footer ul li {
   
   
   }
+

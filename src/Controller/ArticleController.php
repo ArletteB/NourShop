@@ -22,23 +22,15 @@ class ArticleController extends AbstractController
     /**
      * @Route("/article", name="article_index")
      */
-    public function index(
-        ArticleRepository $articleRepository,
-        ManagerRegistry $doctrine,
-        Request $request
-        ): Response {
-            $data = $articleRepository->findAll();
-            $articles = (
-                $request->query->getInt('page', 1)
-            );
+    public function index(ManagerRegistry $doctrine): Response {
+           
         $repository = $doctrine->getRepository(Article::class);
         $articles = $repository->findBy([], ['nom'=> 'DESC']);
-      
         return $this->render('article/index.html.twig', ['articles'=> $articles]);
     }
 
      /**
-     * @Route("/article/ajouter", name="article_add")
+     * @Route("/admin/article/ajouter", name="article-admin_add")
      * @IsGranted("ROLE_ADMIN")
      * @return Response
      */
@@ -52,15 +44,15 @@ class ArticleController extends AbstractController
             $em->persist($article);
             $em->flush();
 
-            return $this->redirectToRoute( "article_index" ) ;
+            return $this->redirectToRoute( "article_admin" ) ;
         }
 
-        return $this->render('article/add.html.twig', [
+        return $this->render('dashboard/article-add.html.twig', [
             'form' => $form->createView()
         ]);
     }
       /**
-     * @Route("/{id}/editer", name="article_edit", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
+     * @Route("/admin/{id}/editer", name="article-admin_edit", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
      * @IsGranted("ROLE_ADMIN")
      */
     public function editer($id, ManagerRegistry $doctrine , Request $request): Response {
@@ -71,10 +63,10 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em->flush();
-            return $this->redirectToRoute('article_show', ['id' => $id]);
+            return $this->redirectToRoute('article_admin');
         }
 
-        return $this->render('article/edit.html.twig', [
+        return $this->render('dashboard/article-edit.html.twig', [
             "form" => $form->createView()
         ]);
     }
@@ -90,7 +82,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/supprimer", name="article_delete", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
+     * @Route("/admin/{id}/supprimer", name="article-admin_delete", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
      * @IsGranted("ROLE_ADMIN")
      */
     public function delete($id, ManagerRegistry $doctrine): Response {
@@ -99,20 +91,43 @@ class ArticleController extends AbstractController
         $article= $repository->find($id);
         $em->remove($article);
         $em->flush();
-        return $this->redirectToRoute('article_index');
+        return $this->redirectToRoute('article_admin');
     }
+
+    /**
+     * @Route("/admin/article", name="article_admin")
+     */
+    public function article(ManagerRegistry $doctrine): Response {
+           
+        $repository = $doctrine->getRepository(Article::class);
+        $articles = $repository->findBy([], ['nom'=> 'DESC']);
+        return $this->render('dashboard/article-admin.html.twig', ['articles'=> $articles]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
     /**
      * @Route("/article/wax", name="article_wax_index")
      */
-    public function show_wax(ManagerRegistry $doctrine): Response {
-        $repository = $doctrine->getRepository(Article::class);
-        $articles = $repository->findBy(['tissus'=> "wax"], ['nom'=> 'DESC']);
+    // public function show_wax(ManagerRegistry $doctrine): Response {
+    //     $repository = $doctrine->getRepository(Article::class);
+    //     $articles = $repository->findBy(['tissus'=> "wax"], ['nom'=> 'DESC']);
       
-        return $this->render('article/index.html.twig', ['articles'=> $articles]);
-    }
+    //     return $this->render('article/index.html.twig', ['articles'=> $articles]);
+    // }
 
 }
 

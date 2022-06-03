@@ -13,6 +13,18 @@
                 <a class="boutton-btn" href="{{ path('home_about') }}">Qui sommes nous?</a>
             </div>
     </section>
+
+    {# ----------              -------------- #}
+    {# ----------   Hisoitre   -------------- #}
+    {# ----------              -------------- #}
+    <section class="histoire">
+            <h2>Histoire du Tissus Africain</h2>
+            <div class="africains-story">
+                <p>
+                    L’Afrique est riche de ses cultures et de ses textiles. Ils racontent une grande partie de l’histoire de ce continent aux multiples facettes. Les premières étoffes qui sont apparues sur une large partie du continent noir étaient d’écorce battue. Ce n’est qu’au début du XIème siècle que l’on observe l’émergence des tissages. Ils seront, jusqu’au XIXème siècle l’apanage des rois et des dignitaires africains, signe d’appartenance sociale et de richesse. Ils sont de véritables langages visuels et racontent l’histoire d’une famille royale, d’une ethnie, d’un peuple, d’une région ou d’un pays.
+               </p>
+            </div>
+        </section>
     
 
     {# ----------              -------------- #}
@@ -20,7 +32,7 @@
     {# ----------              -------------- #}
 
     <section class="generalcontenucard">
-        <h2>Dernière actualités</h2>
+        <h2>DÉCOUVRER NOS DERNIÈRE ACTUALITÉE</h2>
         <div id="containerArticle">
 
             {% for article in articles %}
@@ -34,7 +46,7 @@
                             <h3>{{article.nom}}</h3>
                             <p>{{article.prix}}€</p>  
                         </div>
-                        <p class="descriptionArticle">{{article.description|u.truncate(130, '...', false)}}</p>
+                        <p class="descriptionArticle">{{article.description|u.truncate(100, '...', false)}}</p>
                     </a>
                 </div>
             {% endfor %}
@@ -48,6 +60,6 @@
 
          {{ include('home/temoignage.html.twig') }}
 
-   
+    
 
 {% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'baseDashboard.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('article-admin_add') }}">Ajouter</a>
+    {% for article in articles %}
+        <h1>{{article.nom}}</h1>
+        <a href="{{ path('article-admin_edit') }}">Modifier</a>
+        <a href="{{ path('article-admin_delete') }}">Supprimer</a>
+    
+    {% endfor %}
+   
+    
+
+{% endblock %}

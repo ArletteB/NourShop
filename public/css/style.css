@@ -137,6 +137,26 @@ nav ul ul li {
   font-size: 25px;
 }
 
+/* Histoire des Tissus Africain */
+.histoire {
+  background: var(--schemes);
+  height: 470px;
+  text-align: center;
+  margin-top: 7rem;
+}
+.histoire h2{
+  padding-top: 3rem;
+  color: var(--white);
+}
+
+.africains-story p{
+  margin-top: 5rem;
+  margin-left: 7rem;
+  margin-right: 7rem;
+  text-align: justify;
+  color: var(--white);
+  }
+
 /* CARDSLIDER  */
 
 #section-swip{
@@ -146,8 +166,9 @@ nav ul ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-  background:  var(--schemes);
+  background:  var(--blue);
   overflow: hidden;
+  margin-top: 2rem;
 }
 
 .swiper-container {
@@ -157,7 +178,8 @@ nav ul ul li {
 }
 .swiper-container  h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+  color: var(--white);
 }
 .swiper-slide {
   background-position: center;
@@ -331,7 +353,7 @@ nav ul ul li {
   margin: 3rem;
 }
 .image-description{
-  width: 40%;
+  width: 147%;
   height: 425px;
   border: 2px solid grey;
   border-radius: 21px;
@@ -598,7 +620,7 @@ font-family: 'Roboto';
    /********     FOOTER    ********/
   /*******************************/
 
-footer {
+/* footer {
   margin-top: 4rem;
   background-image: url(../img/footer-fond.svg);
   background-size: cover;
@@ -640,6 +662,65 @@ footer ul li {
 }
 .fa-brands {
   font-size: 38px;
+} */
+
+footer {
+  position: relative;
+  width: 100%;
+  background-color: var(--schemes);
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .social_icon,
+footer .menuFoot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+footer .social_icon li,
+footer .menuFoot li {
+  list-style: none;
+
+}
+footer .social_icon li a {
+  font-size: 2em;
+  color: var(--blue);
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+footer .social_icon li a:hover {
+  transform: translateY(-10px);
+}
+footer .menuFoot li a {
+  font-size: 1.2em;
+  color: var(--blue);
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 1;
+
+}
+footer .menuFoot li a:hover {
+  opacity: 0.75;
+}
+
+footer p {
+  color: var(--blue);
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em
 }
 
 
@@ -669,6 +750,22 @@ footer ul li {
   margin-top: 2rem;
   font-size: 20px;
   }
+
+/* SECTION HISTOIRE */
+.histoire {
+  height: 770px !important;
+  margin-top: 3rem !important;
+}
+.histoire h2{
+  font-size: 25px !important;
+}
+
+.africains-story p{
+  margin-top: 3rem !important;
+  margin-left: 2rem !important;
+  margin-right: 2rem !important;
+ 
+}
 
    /*------------                        --------------*/
   /*------------  CARD DES ARTICLES     --------------*/
@@ -819,7 +916,7 @@ font-family: 'Roboto';
  /*-----------      FOOTER      ----------*/
 /*------------                  ---------*/
 
-footer {
+/* footer {
   flex-direction: column;
   text-align: center;
 }
@@ -839,8 +936,10 @@ footer ul li {
   margin: 0;
 }
 .info{
-  margin:0 ;
-}
+  margin:0 ; 
+
+  
+}*/
 
   /*------------                        --------------*/
  /*------------     DESCRIPTIONS       --------------*/
@@ -951,7 +1050,7 @@ footer ul li {
   font-size: 14px;
 }
 
-/*------------                    --------------* /
+   /*------------                    --------------* /
   /*------------   PAGE CONTACT      --------------*/
  /*------------                      -------------*/
  .contact-page {
@@ -1039,7 +1138,7 @@ font-family: 'Roboto';
  /*-----------      FOOTER      ----------*/
 /*------------                  ---------*/
 
-footer {
+/* footer {
   flex-direction: column;
   text-align: center;
 }
@@ -1060,7 +1159,7 @@ footer ul li {
 }
 .info{
   margin:0 ;
-}
+} */
 
   }
 

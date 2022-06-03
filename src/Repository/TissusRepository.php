@@ -47,9 +47,9 @@ class TissusRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return Tissus[] Returns an array of Tissus objects
-    //  */
+     /**
+      * @return Tissus[] Returns an array of Tissus objects
+      */
     /*
     public function findByExampleField($value)
     {
@@ -64,7 +64,7 @@ class TissusRepository extends ServiceEntityRepository
     }
     */
 
-    /*
+    
     public function findOneBySomeField($value): ?Tissus
     {
         return $this->createQueryBuilder('t')
@@ -74,5 +74,7 @@ class TissusRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+    
+
+    
 }

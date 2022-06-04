@@ -32,7 +32,7 @@ body {
     overflow: hidden;
 }
 .navigationDash.active {
-    width: 80px;
+    width: 112px;
 }
 .navigationDash ul {
     position: absolute;
@@ -90,7 +90,7 @@ body {
     white-space: nowrap;
 }
 
-/* Couorbe de l'extérieur */
+/* Courbe de l'extérieur */
 
 .navigationDash ul li:hover a::before,
 .navigationDash ul li.hovered a::before{
@@ -145,7 +145,7 @@ body {
 
 .toggle {
     position: relative;
-    width: 60px;
+    width: 108px;
     height: 60px;
     display: flex;
     justify-content: center;
@@ -197,3 +197,4 @@ body {
     height: 100%;
     object-fit: cover;
 }
+

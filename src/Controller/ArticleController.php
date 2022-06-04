@@ -91,17 +91,20 @@ class ArticleController extends AbstractController
         $article= $repository->find($id);
         $em->remove($article);
         $em->flush();
+
+        $this->addFlash('message', 'Article supprimée avec succès');
+
         return $this->redirectToRoute('article_admin');
     }
 
     /**
      * @Route("/admin/article", name="article_admin")
      */
-    public function article(ManagerRegistry $doctrine): Response {
-           
-        $repository = $doctrine->getRepository(Article::class);
-        $articles = $repository->findBy([], ['nom'=> 'DESC']);
-        return $this->render('dashboard/article-admin.html.twig', ['articles'=> $articles]);
+    public function article(ArticleRepository $articles) {
+
+        return $this->render('dashboard/article-admin.html.twig', [
+            'articles'=> $articles->findAll()
+        ]);
     }
 
 

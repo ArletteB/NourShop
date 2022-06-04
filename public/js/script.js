@@ -55,6 +55,19 @@ if(list){
 }
 
 
+// Suprimer des Articles
+
+let supprimer = document.querySelectorAll(".delete");
+if(supprimer){
+  
+  for(let bouton of supprimer ) {
+      bouton.addEventListener("click", function(){
+        document.querySelector(".modal-footer a").href = `/admin/${this.dataset.id}/supprimer`
+        document.querySelector(".modal-body").innerText = `Êtes-vous sûr(e) de vouloir supprimer l'article "${this.dataset.nom}"`
+      })
+  }
+}
+
 
 
 

@@ -38,13 +38,13 @@ class HomeController extends AbstractController
         return $this->render('home/about.html.twig');
     }
      /**
-     * @Route("/qui-sommes-nous", name="home_mention")
+     * @Route("/mention-legale", name="home_mention")
      */
     public function mention(): Response {
         return $this->render('home/mention.html.twig');
     }
      /**
-     * @Route("/qui-sommes-nous", name="home_politique")
+     * @Route("/politique", name="home_politique")
      */
     public function politique(): Response {
         return $this->render('home/politique.html.twig');

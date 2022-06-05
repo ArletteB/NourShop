@@ -19,23 +19,29 @@
                
 
             <div class="formulaire-contact">
+                
+            
                 <div class="form" action="">
                     <div class="forminfo name-lastname">
-                     {{form_row(form.name, {'attr': {'class' : 'name'}}) }}
-                        <span id="firstname" class="firstname">{{form_row(form.lastname)}}</span>
-                        {# <input id="name" class="name" type="text" placeholder="Nom">
-                        <input id="firstname" class="firstname " type="text" placeholder="Prenom">  #}
+                        {{form_row(form.name) }}
+                        {{form_row(form.lastname,  {'attr': {'class': 'separer-form'}})}}
                     </div>
                     <div class="forminfo adresse">
-                        <input id="" class="phone" type="text" placeholder="Telephone">
-                        <input id="" class="email" type="text" placeholder="Email"> 
+                        {{form_row(form.phone) }}
+                        {{form_row(form.email, {'attr': {'class': 'separer-form'}})}}
                     </div>
-    
-                    <textarea class="message" name=""  cols="40" rows="5" placeholder="Message"></textarea>  
+                    <div class="">
+                        {{form_row(form.message) }}
+                    </div>
                 </div>
-                <a class="envoi" href="">Envoyer</a>
+               <div>
+                {{form_widget(form.envoyer)}}
+               </div>
             </div>
         </div>
     </section>
                
 {% endblock %}
+
+
+      

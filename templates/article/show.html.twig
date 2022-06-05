@@ -15,8 +15,11 @@
             <div class="text-description">
                 <div class="info-description">
                     <h2 class="articleh2">{{article.nom}}</h2>
-                    <p>{{article.prix}}€</p>  
-                    <p class="descriptionArticle">{{article.description}}</p>
+                    <p>{{article.prix}}€</p>
+                    <div class="descriptionArticle">
+                        {{article.description|raw}}
+                    </div>  
+                  
                 </div>
             </div>
         </div>

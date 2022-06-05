@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter un Article
+{% block title %}Voir les Articles
 	{{ parent() }}
 {% endblock %}
 
 {% block body %}
 
 	    <section class="generalcontenucard">
-            <h2>Article</h2>
+            <h2>Découvrer Nos Articles</h2>
             <div id="containerArticle">
 
         {% for article in articles %}
-            <!-- 1ER PERSONNAGE -->
+            
                 <div class="containerArticle">
                     <a href="{{ path('article_show', {"id": article.id}) }}">
                         <div class="imageArticle">

@@ -4,11 +4,15 @@ namespace App\Controller;
 
 use App\Entity\Tissus;
 use App\Form\TissusType;
+use App\Repository\ArticleRepository;
+use App\Repository\TissusRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 
  /**
@@ -46,7 +50,8 @@ class TissusController extends AbstractController
      }
     
      /**
-     * @Route("/tissus/ajouter", name="tissus_add", methods={"GET", "POST"})
+     * @Route("/admin/tissus/ajouter", name="tissus-admin_add", methods={"GET", "POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function add(ManagerRegistry $doctrine, Request $request): Response {
         $tissus = new Tissus();
@@ -57,13 +62,70 @@ class TissusController extends AbstractController
             $em = $doctrine->getManager();
             $em->persist($tissus);
             $em->flush();
-            return $this->redirectToRoute('tissus_index');
+            return $this->redirectToRoute('tissus_admin');
         }
 
-        return $this->render('tissus/add.html.twig', [
+        return $this->render('dashboard/tissus-add.html.twig', [
             'form' => $form->createView()
         ]);
     }
+
+     /**
+     * @Route("/admin/tissus/{id}/editer", name="tissus-admin_edit", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function editer($id, ManagerRegistry $doctrine, Request $request): Response {
+        $em = $doctrine->getManager();
+        $repository = $doctrine->getRepository(Tissus::class);
+        $tissus=$repository->find($id);
+        $form = $this->createForm(TissusType::class, $tissus);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+           
+            $em->persist($tissus);
+            $em->flush();
+            return $this->redirectToRoute('tissus_admin');
+        }
+
+        return $this->render('dashboard/tissus-edit.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+      /**
+     * @Route("/admin/{id}/supprimer", name="article-admin_delete", methods={"GET", "POST"}, requirements = {"id" : "\d+"})
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function supprimer($id, ManagerRegistry $doctrine): Response {
+
+            $em = $doctrine->getManager();
+            $repository = $doctrine->getRepository(Tissus::class);
+            $tissus= $repository->find($id);
+            $em->remove($tissus);
+            $em->flush();
+
+            $this->addFlash('message', 'Tissus supprimé avec succès');
+            return $this->redirectToRoute('tissus_admin');
+        }
+    
+
+     /**
+     * @Route("/admin/tissus", name="tissus_admin")
+     */
+    public function tissus(TissusRepository $tissus) {
+
+        return $this->render('dashboard/tissus-admin.html.twig', [
+            'tissus'=> $tissus->findAll()
+        ]);
+    }
+
+
+
+
+
+
+
     /**
     * @Route("/{id}/wax", name="tissus_wax")
      */

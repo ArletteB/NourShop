@@ -92,8 +92,7 @@ class ArticleController extends AbstractController
         $em->remove($article);
         $em->flush();
 
-        $this->addFlash('message', 'Article supprimée avec succès');
-
+        $this->addFlash('message', 'Article supprimé avec succès');
         return $this->redirectToRoute('article_admin');
     }
 

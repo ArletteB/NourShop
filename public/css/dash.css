@@ -3,198 +3,303 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+
+/* body {
     min-height: 100vh;
     overflow: hidden;
+} */
+
+body {
+    font-family: var(--roboto);
 }
 
-
-:root
-{
-    --blue: #003A6B;
-    --schemes: #B49EFF;
-    --white: #FDFBF4;
-    --green: #707070;
-}
-
-.containerDash {
-    position: relative;
-    width: 100%;
-}
-
-.navigationDash {
-    position: fixed;
-    width: 300px;
-    height: 100%;
-    background: var(--blue);
-    border-left: 10px solid var(--blue);
-    transition: 0.5s;
-    overflow: hidden;
-}
-.navigationDash.active {
-    width: 112px;
-}
-.navigationDash ul {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-.navigationDash ul li {
-    position: relative;
-    width: 100%;
-    list-style: none;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-}
-.navigationDash ul li:hover,
-.navigationDash ul li.hovered a  {
-    background: var(--white);
-}
-.navigationDash ul li:nth-child(1) {
-    margin-bottom: 40px;
-    pointer-events: none;
-}
-
-.navigationDash ul li a{
-    position: relative;
-    display: block;
-    width: 100%;
-    display: flex;
-    text-decoration: none;
-    color: var(--white);
-}
-.navigationDash ul li:hover a ,
-.navigationDash ul li.hovered a {
+h1,
+h2,
+h3,
+h4,
+p,
+a {
     color: var(--blue);
 }
 
-.navigationDash ul li a .iconDash {
-    position: relative;
-    display: block;
-    min-width: 60px;
+h1,
+h2 {
+    font-family: var(--signika);
+    font-size: 2rem;
+}
+
+h3 {
+    font-family: var(--signika);
+    font-size: 25px;
+}
+
+p,
+a,
+li {
+    font-size: 20px;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 78px;
+    background: var(--blue);
+    padding: 6px 14px;
+    z-index: 99;
+    transition: all 0.5s ease;
+}
+
+.sidebar.open {
+    width: 250px;
+}
+
+.sidebar .logo-details {
     height: 60px;
-    line-height: 65px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.sidebar .logo-details .icon {
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.sidebar .logo-details .logo_name {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name {
+    opacity: 1;
+}
+
+.sidebar .logo-details #btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 22px;
+    transition: all 0.4s ease;
+    font-size: 23px;
     text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
-.navigationDash ul li a .iconDash .fa-solid {
-    font-size: 1.60em;
+
+.sidebar.open .logo-details #btn {
+    text-align: right;
 }
-.navigationDash ul li a .titleDash {
-    position: relative;
-    display: block;
-    padding: 0 10px;
+
+.sidebar i {
+    color: var(--white);
     height: 60px;
+    min-width: 50px;
+    font-size: 28px;
+    text-align: center;
     line-height: 60px;
-    text-align: start;
+}
+
+.sidebar .nav-list {
+    margin-top: 20px;
+    height: 100%;
+}
+
+.sidebar li {
+    position: relative;
+    margin: 8px 0;
+    list-style: none;
+    margin-left: -25px;
+}
+
+.sidebar li .tooltip {
+    position: absolute;
+    top: -20px;
+    left: calc(100% + 15px);
+    z-index: 3;
+    background: var(--white);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0;
     white-space: nowrap;
-}
-
-/* Courbe de l'extérieur */
-
-.navigationDash ul li:hover a::before,
-.navigationDash ul li.hovered a::before{
-    content: '';
-    position: absolute;
-    right: 0;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: 35px 35px 0 10px var(--white);
     pointer-events: none;
-}
-.navigationDash ul li:hover a::after,
-.navigationDash ul li.hovered a::after{
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: -50px;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: 35px -35px 0 10px var(--white);
-    pointer-events: none;
+    transition: 0s;
 }
 
-/* MAIN */
-
-.main{
-    position: absolute;
-    width: calc(100% - 300px);
-    left: 300px;
-    min-height: 100vh;
-    /* background: var(--white); */
-    transition: 0.5s;
-}
-.main.active{
-    width: calc(100% - 80px);
-    left: 80px;
+.sidebar li:hover .tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.topbar {
+.sidebar.open li .tooltip {
+    display: none;
+}
+
+.sidebar li a {
+    display: flex;
+    height: 100%;
     width: 100%;
-    height: 60px;
+    border-radius: 12px;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    background: var(--blue);
+}
+
+.sidebar li a:hover {
+    background: var(--white);
+}
+
+.sidebar li a .links_name {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.sidebar.open li a .links_name {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i {
+    transition: all 0.5s ease;
+    color: var(--blue);
+}
+
+.sidebar li i {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+
+.home-section {
+    position: relative;
+    background: #E4E9F7;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+/* Interface Admin */
+
+.tableau {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+/* Gestion des Article */
+
+.gestion-article {
+    margin-left: auto;
+    margin-right: 2rem;
+    width: 76%;
+}
+
+.head-article {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
-.toggle {
-    position: relative;
-    width: 108px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    cursor: pointer;
+.msbtn {
+    background-color: var(--blue);
+    border-color: var(--blue);
 }
 
-.search {
-    position: relative;
-    width: 400px;
-    margin: 0 10px;
+.msbtn:hover {
+    background-color: var(--blue);
+    border-color: var(--blue);
+    opacity: 1;
 }
 
-.search label {
-    position: relative;
-    width: 100%;
+/* Ajout des Articles */
+.ajout-article  h2 {
+    text-align: center;
+    margin-top: 2rem;
 }
-.search label input {
-    width: 100%;
-    height: 40px;
-    border-radius: 40px;
-    padding: 5px 20px;
-    padding-left: 35px;
-    font-size: 18px;
-    outline: none;
-    border: 1px solid var(--green);
+.article {
+    margin-left: auto;
+    margin-right: 2rem;
+    width: 76%;
 }
-
-.search  label .fa-solid {
-    position: absolute;
-    top: 0;
-    left: 10px;
+#msbtn {
+    background-color: var(--blue);
+    border-color: var(--blue);
+    color:var(--white)
 }
 
-.admin {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-}
-.admin img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+#msbtn:hover {
+    background-color: var(--blue);
+    border-color: var(--blue);
+    opacity: 1;
 }
 
+@media (min-width: 320px) and (max-width:500px) {
+    /* Pour la Side Bar */
+    .sidebar {
+        left: -9px;
+    }
+    /* Pour la Gestion des Articles */
+    .head-article {
+        flex-direction: column;
+        margin-left: 3rem;
+    }
+
+    .gestion-article {
+        margin-right: 21px;
+        width: 85%;
+    }
+
+    .tableau {
+        margin-top: 10rem;
+        margin-left: 6rem;
+    }
+    /* Pour l'ajout des Articles */
+    .ajout-article  h2 {
+        margin-left: 4rem;
+    }
+    .article {
+       
+        margin-right: 10px;
+        width: 75%;
+    }
+}
+
+@media (min-width: 501px) and (max-width:646px) {
+    .tableau {
+        margin-top: 10rem;
+        margin-left: 6rem;
+    }
+}
+
+
+
+
+@media (max-width: 420px) {
+    .sidebar li .tooltip {
+        display: none;
+    }
+}

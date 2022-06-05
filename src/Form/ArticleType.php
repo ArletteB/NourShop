@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class ArticleType extends AbstractType
 {
@@ -23,7 +24,7 @@ class ArticleType extends AbstractType
         $builder
             ->add('nom', TextType::class)
             ->add('prix', MoneyType::class)
-            ->add('description', TextareaType::class)
+            ->add('description', CKEditorType::class)
             ->add('imageFile', FileType::class)
             ->add('tissus', EntityType::class, [
                 'class' => Tissus::class,

@@ -29,30 +29,20 @@ function toggleMenu() {
 
 // Menu Toggle Dasboard
 
-let toggle = document.querySelector('.toggle');
-let navigationDash = document.querySelector('.navigationDash');
-let main = document.querySelector('.main');
+// let toggle = document.querySelector('.toggle');
+// let navigationDash = document.querySelector('.navigationDash');
+// let main = document.querySelector('.main');
 
-if (toggle){
-  toggle.onclick = function(){
-    navigationDash.classList.toggle('active');
-    main.classList.toggle('active');
-  }
+// if (toggle){
+//   toggle.onclick = function(){
+//     navigationDash.classList.toggle('active');
+//     main.classList.toggle('active');
+//   }
   
-}
+// }
 
 
-//  Ajouter une class survolée dans l'élément de liste selectionné
-let list = document.querySelectorAll('.navigationDash li');
-function activeLink(){
-    list.forEach((item) =>
-    item.classList.remove('hovered'));
-    this.classList.add('hovered');
-}
-if(list){
-  list.forEach((item) =>
-  item.addEventListener('mouseover', activeLink));
-}
+
 
 
 // Suprimer des Articles
@@ -67,6 +57,29 @@ if(supprimer){
       })
   }
 }
+
+let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+if (closeBtn){
+  
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+}
+
+if(menuBtnChange){
+  
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("fa-bars", "fa-bars-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("fa-bars-alt-right","fa-bars");//replacing the iocns class
+   }
+  }
+}
+
+// following are the code to change sidebar button(optional)
 
 
 

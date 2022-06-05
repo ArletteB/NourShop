@@ -773,6 +773,7 @@ footer p {
  #containerArticle {
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 .containerArticle {
   width: 100%;
@@ -911,35 +912,6 @@ font-family: 'Roboto';
  font-size: 25px;
 }
 
-
-  /*----------                  -----------*/
- /*-----------      FOOTER      ----------*/
-/*------------                  ---------*/
-
-/* footer {
-  flex-direction: column;
-  text-align: center;
-}
-footer img {
-  width: 30%;
-}
-footer ul {
-  flex-direction: column;
-}
-footer ul li {
-  padding: 0.8rem;
-}
-.contenu {
-  margin-top: 1.5rem;
-}
-.societe {
-  margin: 0;
-}
-.info{
-  margin:0 ; 
-
-  
-}*/
 
   /*------------                        --------------*/
  /*------------     DESCRIPTIONS       --------------*/

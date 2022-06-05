@@ -5,15 +5,9 @@
                 <a href="{{ path('home') }}"><img class="logonour" src="{{ asset('img/logo.svg') }}" alt="Logo NourShop">
                 <ul class="menu-links">
                 <li><a href="{{ path('home')}}">Accueil</a></li>
-                    <li><a href="">Nos Tissus <i class="fa-solid fa-caret-down"></i></a>
-                        <ul>
-                            <li><a href="">Wax</a></li>
-                            <li><a href="{#{{ path('tissus_bazin') }}#}">Bazin</a></li>
-                            <li><a href="{#{{ path('tissus_chigan') }}#}">Chigan</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{{ path('article_index')}}">Nos Tissus</a></li>
                     <li><a href="{{ path('home_tailleur') }}">Notre Tailleur</a></li>
-                    {# <li><a href="">Nos Tarifs</a></li> #}
+                   
                     <li><a href="{{ path('home_contact') }}">Nous Contacter</a></li>
                 </ul>
                  <button id="menu-btn" class="fa-solid fa-bars icons"></button>

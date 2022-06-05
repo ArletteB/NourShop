@@ -1,10 +1,52 @@
-<div class="containerDash">
+  <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">NourShop</div>
+            <i class="fa-solid fa-bars" id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="{{ path('admin_index') }}">
+              <i  class="fa-solid fa-house-user"></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+             
+          </li>
+          <li>
+           <a href="{{ path('article_admin') }}">
+             <i class="fa-solid fa-list"></i>
+             <span class="links_name">Articles</span>
+           </a>
+           
+         </li>
+         <li>
+           <a href="{{ path('tissus_admin') }}">
+            <i class="fa-solid fa-list"></i>
+             <span class="links_name">Tissus</span>
+           </a>
+           
+         </li>
+         <li>
+           <a href="{{ path('app_logout') }}">
+             <i class="fa-solid fa-arrow-right-from-bracket"></i>
+             <span class="links_name">Se déconnecté</span>
+           </a>
+           
+         </li>
+        </ul>
+    </div>
+
+
+
+
+
+{# <div class="containerDash">
+
         <div class="navigationDash">
             <ul>
                 <li>
                     <a href="">
-                        <span class="iconDash"></span>
                         <span class="titleDash">NourShop</span>
+                        <span class="iconDash"><i class="fa-solid fa-bars" id="btn-menu"></i></span>
                     </a>
                 </li>
                 <li>
@@ -39,3 +81,7 @@
                 </li>
             </ul>
         </div>
+</div> #}
+
+      
+     

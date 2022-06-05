@@ -7,8 +7,8 @@
     
 	<section class="gestion-article">
 		<div class="head-article">
-			<h1>Gérer les Articles</h1>
-			<a class="btn btn-primary msbtn" href="{{ path('article-admin_add') }}" role="button">Ajouter  un Article</a>
+			<h1>Gérer les Tissus</h1>
+			<a class="btn btn-primary msbtn" href="{{ path('tissus-admin_add') }}" role="button">Ajouter  un Tissus</a>
 		</div>
 
 		<table class="table">
@@ -16,23 +16,22 @@
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Nom</th>
-					<th scope="col">Prix</th>
 					<th scope="col">Modifier</th>
 					<th scope="col">Supprimer</th>
 				</tr>
 			</thead>
 			<tbody>
-				{% for article in articles %}
+				{% for tissus in tissus %}
 
 					<tr>
-						<th scope="row">{{article.id}}</th>
-						<td>{{article.nom}}</td>
-						<td>{{article.prix}}</td>
+						<th scope="row">{{tissus.id}}</th>
+						<td>{{tissus.name}}</td>
+						
 						<td>
-							<a class="btn btn-primary msbtn" href="{{ path("article-admin_edit", {id: article.id}) }}" role="button">Modifier</a>
+							<a class="btn btn-primary msbtn" href="{{ path("tissus-admin_edit", {id: tissus.id}) }}" role="button">Modifier</a>
 						</td>
 						<td>
-							<button type="button" class="btn btn-primary delete msbtn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{article.id}}" data-nom="{{article.nom}}">Supprimer</button>
+							<button type="button" class="btn btn-primary delete msbtn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{tissus.id}}" data-nom="{{tissus.name}}">Supprimer</button>
 						</td>
 					</tr>
 				{% endfor %}

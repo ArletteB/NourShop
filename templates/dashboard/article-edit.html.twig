@@ -3,11 +3,15 @@
 {% block title %}Editer un article{% endblock %}
 
 {% block body %}
-        <h2>Editer un article</h2>
-        {{ form_start(form)}}
+        <section class="ajout-article">
+            <h2>Editer un Article</h2>
 
-            {{ include('dashboard/_article-form.html.twig') }}    
-            <button class="btn_primary">Editer</button>
+            {{ form_start(form, {'attr': {'class': 'article'}}) }}
 
-        {{ form_end(form)}}
+                {{ include('dashboard/_article-form.html.twig') }}    
+                <button class="btn btn_primary " id="msbtn">Editer</button>
+
+            {{ form_end(form)}}
+      
+    </section>
 {% endblock %}

@@ -1,15 +1,15 @@
 {% extends 'baseDashboard.html.twig' %}
 
-{% block title %}Ajouter un article{% endblock %}
+{% block title %}Editer un tissus{% endblock %}
 
 {% block body %}
     <section class="ajout-article">
-        <h2>Ajouter un Article</h2>
+        <h2>Editer un Tissus</h2>
 
             {{ form_start(form, {'attr': {'class': 'article'}}) }}
 
-                {{ include('dashboard/_article-form.html.twig') }}    
-                <button class="btn btn_primary " id="msbtn">Ajouter</button>
+                {{ include('dashboard/_tissus-form.html.twig') }}    
+                <button class="btn btn_primary " id="msbtn">Editer</button>
 
             {{ form_end(form)}}
       
